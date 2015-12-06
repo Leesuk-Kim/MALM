@@ -45,7 +45,6 @@ while True:
                     message = fileinput.input()
                     message = input("입력:")
                     clientSocket.send(message.encode())
-                    # prompt()
             else:
                 message = input("입력:")
                 clientSocket.send(message)
