@@ -6,6 +6,8 @@ from select import *
 import sys
 from time import ctime
 from threading import Thread
+from functools import wraps
+import json
 
 
 # 호스트, 포트와 버퍼 사이즈를 지정BUFSIZE = 1024
@@ -17,7 +19,7 @@ class Error(error):
     pass
 
 
-class MalmServer(Thread):
+class BaseMalmServer(Thread):
     def __init__(self, host, port):
         super().__init__()
         self.me = socket(AF_INET, SOCK_STREAM)
@@ -25,6 +27,41 @@ class MalmServer(Thread):
         self.messages = []
         self.backlog = 5
         self.connlist = []
+        self.name = 'powerstrip'
+
+    @staticmethod
+    def decode(anoun):
+        """
+        User에서 받은 메시지를 dict로 변환하고 메시지로 변환
+        :param anoun:
+        :return:
+        """
+        dec = json.loads(anoun)
+        return dec
+
+    def anounce(self):
+        pass
+
+    @staticmethod
+    def encode(synth):
+        """
+        Things에서 받은 메시지를 해석하고 dict로 변환
+        :param synth:
+        :return:
+        """
+        enc = json.dumps(synth)
+        return enc
+
+    def synthesize(self):
+        pass
+
+    def run(self):
+        critical = False
+
+        while not critical:
+
+            pass
+        pass
 
     def open(self):
         self.me.listen(self.backlog)
@@ -35,16 +72,6 @@ class MalmServer(Thread):
 
     def __del__(self):
         self.close()
-
-    def run(self):
-        critical = False
-
-        while not critical:
-            
-            pass
-        pass
-    pass
-
 
 
 

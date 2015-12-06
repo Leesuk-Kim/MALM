@@ -6,7 +6,9 @@ import Malm as malm
 host = ''
 port = 56789
 
-ms = malm.MalmServer(host, port)
+bms = malm.BaseMalmServer(host, port)
 
-ms.open()
-ms.start()
+malm.decoder_powerstrip('abcd')
+
+# bms.open()
+# bms.start()
