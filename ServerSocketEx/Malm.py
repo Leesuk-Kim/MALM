@@ -29,29 +29,6 @@ class BaseMalmServer(Thread):
         self.connlist = []
         self.name = 'powerstrip'
 
-    @staticmethod
-    def decode(anoun):
-        """
-        User에서 받은 메시지를 dict로 변환하고 메시지로 변환
-        :param anoun:
-        :return:
-        """
-        dec = json.loads(anoun)
-        return dec
-
-    def anounce(self):
-        pass
-
-    @staticmethod
-    def encode(synth):
-        """
-        Things에서 받은 메시지를 해석하고 dict로 변환
-        :param synth:
-        :return:
-        """
-        enc = json.dumps(synth)
-        return enc
-
     def synthesize(self):
         pass
 
