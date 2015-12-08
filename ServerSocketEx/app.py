@@ -4,9 +4,7 @@ from socket import *
 from select import *
 import sys
 from time import ctime
-from threading import Thread
-from functools import wraps
-import Malm as malm
+from BaseMalm import BaseMalm
 
 # 호스트, 포트와 버퍼 사이즈를 지정
 BUFSIZE = 1024
