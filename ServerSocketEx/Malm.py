@@ -24,7 +24,7 @@ SOFTWARE.
 import ThingsManager
 
 
-class BaseMalm:
+class Malm:
     def __init__(self, host, port, sendqueue: list):
         self.name = 'powerstrip'
         self.sendqueue = sendqueue
