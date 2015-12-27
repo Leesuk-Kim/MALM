@@ -1,0 +1,3 @@
+Code Warrior는 설치
+
+Xbee Extention 설치 불가(32-bit 전용이라고 지랄함)
