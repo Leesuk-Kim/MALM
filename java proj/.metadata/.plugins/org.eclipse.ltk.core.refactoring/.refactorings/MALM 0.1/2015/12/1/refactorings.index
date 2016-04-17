@@ -1,0 +1,15 @@
+1451242279703	Rename type 'Employable'
+1451247821401	Rename package 'com.dahnovak.malm.model'
+1451323804818	Rename type 'Controller'
+1451324318758	Rename type 'NetworkController'
+1451324375259	Move compilation unit
+1451324377924	Delete element
+1451324415613	Rename field 'xbeeController'
+1451601671790	Rename field 'XBC_BAUDRATE'
+1451603930682	Rename field 'modem'
+1451604783876	Rename method 'open'
+1451605421787	Delete element
+1451605474661	Rename field 'collegues'
+1451605904448	Delete element
+1451606182097	Rename field 'peasant'
+1451606185313	Rename field 'remoteDevoce'

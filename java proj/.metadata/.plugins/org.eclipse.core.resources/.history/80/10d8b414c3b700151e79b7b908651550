@@ -1,0 +1,44 @@
+package com.dahnovak.malm;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SqliteController {
+	private static SqliteController instance;
+
+	private SqliteController(){
+		
+	}
+	
+	private static final String TABLE_USER = "user";
+	private static final String TABLE_DEVICE = "device";
+	private static final String TABLE_AUTH = "auth";
+	
+	public static SqliteController getInstance() {
+		if(instance == null)
+			instance = new SqliteController();
+		return instance;
+	}
+
+	public void test(){
+		Connection conn_user = null, conn_auth = null, conn_device = null;
+		try {
+			conn_user = DriverManager.getConnection("jdbc:sqlite:user.db");
+			conn_auth = DriverManager.getConnection("jdbc:sqlite:auth.db");
+			conn_device = DriverManager.getConnection("jdbc:sqlite:device.db");
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn_user.close();
+				conn_auth.close();
+				conn_device.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
