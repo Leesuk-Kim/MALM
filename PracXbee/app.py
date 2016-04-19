@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # srle = serial.Serial('COM5', 9600)
     # xbe = XBee(srle)
 
-    xbc.at(command=b'NI')
+    xbc.at(command=b'ND')
 
     resc1 = xbc.wait_read_frame()
     print(resc1)
