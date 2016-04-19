@@ -9,12 +9,15 @@ from xbee import ZigBee
 if __name__ == '__main__':
     srlc = serial.Serial('COM7', 9600)
     xbc = ZigBee(srlc)
-    srle = serial.Serial('COM5', 9600)
-    xbe = XBee(srle)
+    # srle = serial.Serial('COM5', 9600)
+    # xbe = XBee(srle)
 
     xbc.at(command=b'NI')
 
-    resc = xbc.wait_read_frame()
+    resc1 = xbc.wait_read_frame()
+    print(resc1)
+    resc2 = xbc.wait_read_frame()
+    print(resc2)
     xbc.remote_at(
         dest_addr=b'\x56\x78',
         command=b'D2',
