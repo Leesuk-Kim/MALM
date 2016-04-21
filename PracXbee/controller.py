@@ -12,7 +12,7 @@ class HighLowAddr:
     """
     주소의 high, low, 그리고 주소 자체를 관리합니다.
     """
-    def __init__(self, high, low):
+    def __init__(self, high: str, low: str):
         self._high = high
         self._low = low
 
@@ -36,3 +36,12 @@ class HighLowAddr:
         :return: the 64-bit address
         """
         return self._high + self._low
+
+
+def byteUTF8(msg: str):
+    """
+    string to bytes with encoding of UTF-8.
+    :param msg:
+    :return:
+    """
+    return bytes(msg, encoding='utf-8')

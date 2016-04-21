@@ -11,8 +11,8 @@ if __name__ == '__main__':
     xbc = ZigBee(srlc)
     # srle = serial.Serial('COM5', 9600)
     # xbe = XBee(srle)
-
-    xbc.at(command=b'ND')
+    a = b'ND'
+    xbc.at(command=bytes('ND', encoding='utf-8'))
 
     resc1 = xbc.wait_read_frame()
     print(resc1)
